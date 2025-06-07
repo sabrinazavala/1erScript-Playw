@@ -1,4 +1,4 @@
-export class HomePage {
+class HomePage {
     constructor(page) {
         this.page = page;
 
@@ -14,6 +14,7 @@ export class HomePage {
                 login: this.page.locator('#login2'),
                 signup: this.page.locator('#signin2'),
                 welcome: this.page.locator('#nameofuser'),
+                logout: this.page.locator('#logout2'),
             }
         };
     }
@@ -25,6 +26,10 @@ export class HomePage {
 
     async clickOnLoginLink() {
         await this.elements.topMenu.login.click();
+    }
+    
+    async clickOnLogoutLink() {
+        await this.elements.topMenu.logout.click();
     }   
 }
-    
+module.exports = HomePage;    

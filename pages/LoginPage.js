@@ -1,4 +1,4 @@
-export class LoginPage {
+class LoginPage {
   constructor(page) {
     this.page = page;
   } 
@@ -18,12 +18,18 @@ export class LoginPage {
   }
   // METHODS:
   async InsertUsername(username) {
-    await this.elements.textBoxes.username.fill(username);
+    await this.elements.textBoxes.username.fill(username); // Use a fixed username for testing
   }
   async InsertPassword(password) {
     await this.elements.textBoxes.password.fill(password);
   }
   async clickOnLoginButton() {
     await this.elements.buttons.login.click();
-  } 
+  }
+  
+  async clickOnCloseButton() {
+    await this.elements.buttons.close.click();
+  }   
+
 }
+module.exports = LoginPage;
